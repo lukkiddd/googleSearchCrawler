@@ -1,4 +1,4 @@
-# google_search_scrapper
+# googleSearchCrawler
 
 ## Required library
 - [google](https://pypi.python.org/pypi/google)
