@@ -6,6 +6,9 @@ import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 
+KEYWORD = "KEYWORD"
+SHEETNAME = "SHEETNAME"
+
 scope = ['https://spreadsheets.google.com/feeds']
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name('client.json', scope)
@@ -13,12 +16,12 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name('client.json', sc
 gc = gspread.authorize(credentials)
 
 # Open a worksheet from spreadsheet with one shot
-sht2 = gc.open('RefinnDoc')
+sht2 = gc.open(SHEETNAME)
 worksheet = sht2.get_worksheet(0)
 
 list_name = []
 list = []
-for i in search('refinn', stop=100, lang="th"):
+for i in search(KEYWORD, stop=100, lang="th"):
     name = i.split('//')[1].replace('www.','').split('.')[0]
     if name not in list_name and name not in ['facebook','th-th']:
         data = req.get(i)
