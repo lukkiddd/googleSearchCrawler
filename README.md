@@ -9,3 +9,9 @@
 - BeautifulSoup
 
 ** [client.json](http://gspread.readthedocs.org/en/latest/oauth2.html)
+
+### Set up keyword and sheet name
+```js
+KEYWORD = "KEYWORD"
+SHEETNAME = "SHEETNAME"
+```
